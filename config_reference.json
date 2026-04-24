@@ -1,0 +1,44 @@
+{
+  "_note": "Tämä on referenssipoiminta ja esimerkki vector-haun ja embeddingien asetuksista. En suosittele käyttämään tuotantokonfiguraationa.",
+  "app_config_knowledge": {
+    "retrieval_backend": "keyword",
+    "embedding_provider": "ollama",
+    "embedding_model": "nomic-embed-text",
+    "embedding_dimensions": null,
+    "hybrid_keyword_weight": 0.5,
+    "hybrid_vector_weight": 0.5,
+    "vector_min_similarity": 0.2,
+    "embedding_batch_size": 16,
+    "embedding_rebuild_batch_size": 50,
+    "embedding_request_timeout_seconds": 30,
+    "auto_enqueue_embeddings": false,
+    "min_relevance_score": 2.0,
+    "default_search_results": 3,
+    "max_debug_results": 10,
+    "show_sources": false
+  },
+  "plan_examples": {
+    "Example 1": {
+      "allow_knowledge_base": true,
+      "allow_vector_search": false,
+      "allow_hybrid_retrieval": false,
+      "max_embedding_chunks": 5
+    },
+    "Example 2": {
+      "allow_knowledge_base": true,
+      "allow_vector_search": true,
+      "allow_hybrid_retrieval": false,
+      "max_embedding_chunks": 10
+    },
+    "Example 3": {
+      "allow_knowledge_base": true,
+      "allow_vector_search": true,
+      "allow_hybrid_retrieval": true,
+      "max_embedding_chunks": 20
+    }
+  },
+  "example_placeholders": {
+    "ai_bridge_base_url": "http://AI_BRIDGE_EXAMPLE:8000",
+    "embedding_secret_ref_example": "TENANT_EXAMPLE_OLLAMA_API_KEY"
+  }
+}
